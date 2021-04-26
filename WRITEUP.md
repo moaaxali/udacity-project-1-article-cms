@@ -19,3 +19,10 @@ With Azure App Service, we can quickly build, deploy, and scale enterprise-grade
 App Service enables us to build and host web apps, background jobs, mobile back-ends, and RESTful APIs in the programming language of your choice without managing infrastructure. It offers automatic scaling and high availability. App Service supports Windows and Linux and enables automated deployments from GitHub, Azure DevOps, or any Git repo to support a continuous deployment model.
 
 It allows us to focus on the website and API logic while Azure handles the infrastructure to run and scale our web applications.
+
+# Azure Compute choice for the *Article CMS project*
+After analyzing all the given options for the FlaskWebProject (Articles CMS) and also looking to the nature of the project I finally came to a decision to choose the Azure App Service to deploy it. The are few reasons I choose App Service over VM
+
+- *The first and the important one to choose App service over VM is the ease of management and agility for me*
+- *Second, The project is very simple and small that it doesn't require any custom configurations and hence managing and controlling an entire OS for it is somehow a wast of resources.*
+- *And Finally, most of the time I use Github for my projects, and this way azure app service will enable me to quickly build and deploy the project using github actions.*
