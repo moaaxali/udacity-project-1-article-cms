@@ -1,12 +1,14 @@
-# Write-up Template
+# Overview of Azure compute services
+Azure compute is an on-demand computing service for running cloud-based applications.
 
-### Analyze, choose, and justify the appropriate resource option for deploying the app.
+- Azure Virtual Machines
+- Azure App Services
 
-*For **both** a VM or App Service solution for the CMS app:*
-- *Analyze costs, scalability, availability, and workflow*
-- *Choose the appropriate solution (VM or App Service) for deploying the app*
-- *Justify your choice*
+## Azure Virtual Machine
+Virtual machines are software emulations of physical computers. They include a virtual processor, memory, storage, and networking resources. VMs host an operating system, and we can install and run software just like a physical computer. When using a remote desktop client, we can use and control the VM as if we were sitting in front of it.
 
-### Assess app changes that would change your decision.
+With Azure Virtual Machines, we can create and use VMs in the cloud. VMs provide infrastructure as a service (IaaS) in the form of a virtualized server and can be used in many ways. Just like a physical computer, we can customize all of the software running on the VM. VMs are an ideal choice when we need:
 
-*Detail how the app and any other needs would have to change for you to change your decision in the last section.* 
+- Total control over the operating system (OS).
+- The ability to run custom software.
+- To use custom hosting configurations.
