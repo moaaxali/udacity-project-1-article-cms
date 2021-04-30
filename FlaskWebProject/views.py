@@ -96,6 +96,7 @@ def authorized():
     if request.args.get('state') != session.get("state"):
         return redirect(url_for("home"))  # No-OP. Goes back to Index page
     if "error" in request.args:  # Authentication/Authorization failure
+        app.logger.info('Failed attempt: login failed using Sign in with Microsoft')
         return render_template("auth_error.html", result=request.args)
     if request.args.get('code'):
         cache = _load_cache()
@@ -111,6 +112,7 @@ def authorized():
         # Here, we'll use the admin username for anyone who is authenticated by MS
         user = User.query.filter_by(username="admin").first()
         login_user(user)
+        app.logger.info('Login Success: Successfully logged in with "Sign-in with Microsoft"!')
         _save_cache(cache)
     return redirect(url_for('home'))
 
