@@ -3,7 +3,7 @@
 {% block content %}
 <div>
     <div class="row" style="margin-top: 25px;">
-        <table class="table">
+        <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">ID</th>
@@ -23,7 +23,7 @@
                 <td>{{ post.subtitle }}</td>
                 <td>{{ post.author }}</td>
                 <td>{{ post.image_path != None }}</td>
-                <td><a href="{{ url_for('post', id=post.id) }}">Edit Post</a></td>
+                <td><a class="btn btn-primary" href="{{ url_for('post', id=post.id) }}">Edit Post</a></td>
                 <td>
                     <form action="{{ url_for('delete_post', id=post.id) }}" method="POST">
                         <input class="btn btn-danger" type="submit" value="Delete"
