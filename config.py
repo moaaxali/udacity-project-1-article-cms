@@ -2,8 +2,8 @@ import os
 from azure.keyvault.secrets import SecretClient
 from azure.identity import DefaultAzureCredential
 
-# keyVaultName = os.environ["KEY_VAULT_NAME"]
-KVUri = f"https://ud-article-cms-key-vault.vault.azure.net"
+keyVaultName = os.environ["KEY_VAULT_NAME"]
+KVUri = f"https://{keyVaultName}.vault.azure.net"
 
 credential = DefaultAzureCredential()
 _client = SecretClient(vault_url=KVUri, credential=credential)
@@ -40,7 +40,7 @@ class Config(object):
 
     CLIENT_ID = _client.get_secret('client-id').value
 
-    REDIRECT_PATH = _client.get_secret('redirect-path').value  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
+    REDIRECT_PATH = _client.get_secret('redirect-path-appservice').value  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
 
     # You can find the proper permission names from this document
     # https://docs.microsoft.com/en-us/graph/permissions-reference
