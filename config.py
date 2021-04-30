@@ -2,8 +2,8 @@ import os
 from azure.keyvault.secrets import SecretClient
 from azure.identity import DefaultAzureCredential
 
-keyVaultName = os.environ["KEY_VAULT_NAME"]
-KVUri = f"https://{keyVaultName}.vault.azure.net"
+# keyVaultName = os.environ["KEY_VAULT_NAME"]
+KVUri = f"https://ud-article-cms-key-vault.vault.azure.net"
 
 credential = DefaultAzureCredential()
 _client = SecretClient(vault_url=KVUri, credential=credential)
